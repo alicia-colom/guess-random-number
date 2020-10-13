@@ -12,6 +12,10 @@ return Math.ceil(Math.random() * max);
 const randomNumber = getRandomNumber(100);
 console.log("El número aleatorio es " + randomNumber);
 
+let tryNumber = (document.querySelector(".js-try").innerHTML = 0);
+console.log(tryNumber);
+
+
 // Función envío de número
 function handleSendNumber() {
 	const userNumber = parseInt(document.querySelector(".js-textArea").value);
@@ -33,7 +37,8 @@ function handleSendNumber() {
 		console.log("El número debe estar entre 1 y 100.");
   }
   
-  
+  tryNumber = ++tryNumber;
+	console.log(tryNumber);
 }
 
 const button = document.querySelector(".js-btn");
