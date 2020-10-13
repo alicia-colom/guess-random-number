@@ -2,3 +2,46 @@
 /* body {
   background-color: red;
 } */
+
+.main {
+	color: rgb(85, 85, 85);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.title {
+	font-size: 40px;
+}
+
+.form {
+	width: 250px;
+}
+
+.boxSize {
+	height: 30px;
+	border: none;
+  border-radius: 3px;
+  font-size: 16px;
+	font-weight: 600;
+}
+
+.textArea {
+  background-color: rgb(209, 209, 209);
+	color: rgb(85, 85, 85);
+}
+
+.btn {
+	background-color: #32dac4;
+	color: white;
+}
+
+.clue {
+	font-family: Arial, Helvetica, sans-serif;
+	border: solid 3px rgb(209, 209, 209);
+	padding-left: 10px;
+}
+
+.capital {
+	text-transform: capitalize;
+}
