@@ -10,14 +10,14 @@
 		<h1 class="title">Adivina el número</h1>
 		<form  action="" method="post" class="form">
 			<label for="textArea">Introduce aquí el número:</label>
-			<input type="text" id="textArea" name="textArea" class="boxSize textArea" />
-			<input type="button" value="Prueba" class="boxSize btn" />
+			<input type="text" id="textArea" name="textArea" class="boxSize textArea js-textArea" />
+			<input type="button" value="Prueba" class="boxSize btn js-btn" />
 		</form>
 		<p class="clue">
-			Pista: Escribe el número y dale a
-			<span class="capital">prueba</span>
+			Pista: <span class="js-clue">Escribe el número y dale a
+        <span class="capital">prueba</span></span>
 		</p>
-		<p class="clue">Número de intentos: 0</p>
+		<p class="clue">Número de intentos: <span class="js-try">0</span></p>
 
 		<script src="main.js"></script>
 	</body>
