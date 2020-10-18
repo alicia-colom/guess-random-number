@@ -18,19 +18,19 @@ function handleSendNumber() {
 
 	if (userNumber > 1 && userNumber <= 100) {
 		if (userNumber === randomNumber) {
-			clue.innerHTML = "¡Has ganado!";
+			clue.innerHTML = "&#128079; ¡Has ganado! &#128076;";
 		} else if (userNumber > randomNumber) {
-			clue.innerHTML = "Demasiado alto.";
+			clue.innerHTML = "Demasiado alto &#128070;";
 		} else {
-			clue.innerHTML = "Demasiado bajo.";
+			clue.innerHTML = "Demasiado bajo &#128071;";
 		}
 	} else {
 		if (userNumber > 100) {
-			clue.innerHTML = "El número debe ser menor que 100.";
+			clue.innerHTML = "&#128073; El número debe ser menor que 100";
 		} else if (userNumber < 1) {
-			clue.innerHTML = "El número debe ser mayor que 1.";
+			clue.innerHTML = "&#128073; El número debe ser mayor que 1.";
 		} else {
-			clue.innerHTML = "Debes escribir un número para probar suerte.";
+			clue.innerHTML = "&#128161; Debes escribir un número para probar suerte";
 		}
 	}
 	tryNumber.innerHTML = ++tryNumber.innerHTML;
