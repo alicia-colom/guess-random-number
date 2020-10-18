@@ -19,6 +19,11 @@ function handleSendNumber() {
 	if (userNumber > 1 && userNumber <= 100) {
 		if (userNumber === randomNumber) {
 			clue.innerHTML = "&#128079; ¡Has ganado! &#128076;";
+			button.removeEventListener("click", handleSendNumber);
+			reset.classList.remove("reset");
+			reset.classList.add("btn");
+			button.classList.remove("btn");
+			button.classList.add("reset");
 		} else if (userNumber > randomNumber) {
 			clue.innerHTML = "Demasiado alto &#128070;";
 		} else {
@@ -48,6 +53,12 @@ function handleReset() {
 	console.log("El NUEVO número aleatorio es " + randomNumber);
 	clue.innerHTML = clueInit;
 	tryNumber.innerHTML = 0;
+
+	button.addEventListener("click", handleSendNumber);
+	reset.classList.remove("btn");
+	reset.classList.add("reset");
+	button.classList.remove("reset");
+	button.classList.add("btn");
 }
 reset.addEventListener("click", handleReset);
 
