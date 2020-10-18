@@ -1,9 +1,6 @@
-/*** Prueba de enlace de archivos: ***/
-/* body {
-  background-color: red;
-} */
 
 .main {
+	max-width: 500px;
 	color: rgb(85, 85, 85);
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 18px;
@@ -16,29 +13,34 @@
 
 .form {
 	width: 250px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .boxSize {
 	height: 30px;
 	border: none;
   border-radius: 3px;
-  font-size: 16px;
-	font-weight: 600;
+  font-size: 14px;
 }
 
 .textArea {
-  background-color: rgb(209, 209, 209);
-	color: rgb(85, 85, 85);
+  background-color: rgb(222, 222, 222);
+	color:  rgb(85, 85, 85);
+	font-style: italic;
+	text-align: center;
 }
 
 .btn {
 	background-color: #32dac4;
 	color: white;
+	font-weight: 600;
 }
 
 .clue {
 	font-family: Arial, Helvetica, sans-serif;
-	border: solid 3px rgb(209, 209, 209);
+	border: solid 3px rgb(222, 222, 222);
 	padding-left: 10px;
 }
 
