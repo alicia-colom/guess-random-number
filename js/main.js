@@ -3,7 +3,7 @@
 let randomNumber = getRandomNumber(100);
 console.log("El número aleatorio es " + randomNumber);
 let clue = document.querySelector(".js-clue");
-const clueInit = clue.innerHTML; 
+const clueInit = clue.innerHTML;
 let tryNumber = document.querySelector(".js-try");
 tryNumber.innerHTML = 0;
 const button = document.querySelector(".js-btn");
@@ -13,13 +13,14 @@ function getRandomNumber(max) {
 }
 
 function handleSendNumber() {
-	const userNumber = parseInt(document.querySelector(".js-textArea").value);
+	const userNumber = document.querySelector(".js-textArea").value;
 	console.log("El número introducido por el usuario es " + userNumber);
 
 	if (userNumber > 1 && userNumber <= 100) {
-		if (userNumber === randomNumber) {
+		if (userNumber == randomNumber) {
 			clue.innerHTML = "&#128079; ¡Has ganado! &#128076;";
 			button.removeEventListener("click", handleSendNumber);
+			textArea.removeEventListener("keypress", handleEnterSubmit);
 			reset.classList.remove("reset");
 			reset.classList.add("btn");
 			button.classList.remove("btn");
@@ -43,7 +44,6 @@ function handleSendNumber() {
 
 button.addEventListener("click", handleSendNumber);
 
-
 // IMPROVEMENT CHALLENGES
 
 //Reset button:
@@ -55,6 +55,7 @@ function handleReset() {
 	tryNumber.innerHTML = 0;
 
 	button.addEventListener("click", handleSendNumber);
+	textArea.addEventListener("keypress", handleEnterSubmit);
 	reset.classList.remove("btn");
 	reset.classList.add("reset");
 	button.classList.remove("reset");
@@ -63,7 +64,11 @@ function handleReset() {
 reset.addEventListener("click", handleReset);
 
 //Enter button to send number:
-// const textArea = document.querySelector(".js-textArea");
-// textArea.addEventListener("keyEnter", handleSendNumber);
-
-
+const textArea = document.querySelector(".js-textArea");
+function handleEnterSubmit(ev) {
+	if (ev.key === "Enter") {
+		ev.preventDefault();
+		handleSendNumber();
+	}
+}
+textArea.addEventListener("keypress", handleEnterSubmit);
