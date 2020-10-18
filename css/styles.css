@@ -1,3 +1,6 @@
+* {
+	box-sizing: border-box;
+}
 
 .main {
 	max-width: 500px;
@@ -12,22 +15,22 @@
 }
 
 .form {
-	width: 250px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
 .boxSize {
+	width: 250px;
 	height: 30px;
 	border: none;
-  border-radius: 3px;
-  font-size: 14px;
+	border-radius: 3px;
+	font-size: 14px;
 }
 
 .textArea {
-  background-color: rgb(222, 222, 222);
-	color:  rgb(85, 85, 85);
+	background-color: rgb(222, 222, 222);
+	color: rgb(85, 85, 85);
 	font-style: italic;
 	text-align: center;
 }
@@ -36,6 +39,13 @@
 	background-color: #32dac4;
 	color: white;
 	font-weight: 600;
+}
+
+.reset {
+	color: #32dac4;
+	font-style: italic;
+	text-align: center;
+	font-weight: bold;
 }
 
 .clue {

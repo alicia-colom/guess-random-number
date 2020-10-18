@@ -16,21 +16,35 @@ function handleSendNumber() {
 
 	const clue = document.querySelector(".js-clue");
 
-	if (userNumber > 100) {
-		clue.innerHTML = "El número debe estar entre 1 y 100.";
-	} else if (userNumber < 1) {
-		clue.innerHTML = "El número debe estar entre 1 y 100.";
-	} else if (userNumber > randomNumber) {
-		clue.innerHTML = "Demasiado alto.";
-	} else if (userNumber < randomNumber) {
-		clue.innerHTML = "Demasiado bajo.";
-	} else if (userNumber === randomNumber) {
-		clue.innerHTML = "¡Has ganado!";
+	if (userNumber > 1 && userNumber <= 100) {
+		if (userNumber === randomNumber) {
+			clue.innerHTML = "¡Has ganado!";
+		} else if (userNumber > randomNumber) {
+			clue.innerHTML = "Demasiado alto.";
+		} else {
+			clue.innerHTML = "Demasiado bajo.";
+		}
 	} else {
-		clue.innerHTML = "El número debe estar entre 1 y 100.";
+		if (userNumber > 100) {
+			clue.innerHTML = "El número debe ser menor que 100.";
+		} else if (userNumber < 1) {
+			clue.innerHTML = "El número debe ser mayor que 1.";
+		} else {
+			clue.innerHTML = "Debes escribir un número para probar suerte.";
+		}
 	}
-
 	tryNumber.innerHTML = ++tryNumber.innerHTML;
 }
 
 button.addEventListener("click", handleSendNumber);
+
+
+// IMPROVEMENT CHALLENGES
+
+//Enter button to send number:
+// const textArea = document.querySelector(".js-textArea");
+// textArea.addEventListener("keyEnter", handleSendNumber);
+
+
+//Reset button:
+
