@@ -1,7 +1,9 @@
 "use strict";
 
-const randomNumber = getRandomNumber(100);
+let randomNumber = getRandomNumber(100);
 console.log("El número aleatorio es " + randomNumber);
+let clue = document.querySelector(".js-clue");
+const clueInit = clue.innerHTML; 
 let tryNumber = document.querySelector(".js-try");
 tryNumber.innerHTML = 0;
 const button = document.querySelector(".js-btn");
@@ -13,8 +15,6 @@ function getRandomNumber(max) {
 function handleSendNumber() {
 	const userNumber = parseInt(document.querySelector(".js-textArea").value);
 	console.log("El número introducido por el usuario es " + userNumber);
-
-	const clue = document.querySelector(".js-clue");
 
 	if (userNumber > 1 && userNumber <= 100) {
 		if (userNumber === randomNumber) {
@@ -41,10 +41,18 @@ button.addEventListener("click", handleSendNumber);
 
 // IMPROVEMENT CHALLENGES
 
+//Reset button:
+const reset = document.querySelector(".js-reset");
+function handleReset() {
+	randomNumber = getRandomNumber(100);
+	console.log("El NUEVO número aleatorio es " + randomNumber);
+	clue.innerHTML = clueInit;
+	tryNumber.innerHTML = 0;
+}
+reset.addEventListener("click", handleReset);
+
 //Enter button to send number:
 // const textArea = document.querySelector(".js-textArea");
 // textArea.addEventListener("keyEnter", handleSendNumber);
 
-
-//Reset button:
 
